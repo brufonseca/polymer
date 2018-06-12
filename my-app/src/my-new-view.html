@@ -1,18 +1,29 @@
 <!-- Load the Polymer.Element base class -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="shared-styles.html">
+
 <dom-module id="my-new-view">
      <!-- Defines the element's style and local DOM -->
      <template>
-         <style>
+         <style include="shared-styles">
              :host{
                  display: block;
                  padding: 16px;
             }
          </style>
 
-         <h1>New view</h1>
-         <paper-checkbox>Ready to Deploy!</paper-checkbox>
+                
+         <div class="card">
+                <div class="circle">4</div>
+                <h1>New view</h1>  
+                <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
+                <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+                <paper-checkbox>Ready to Deploy!</paper-checkbox>
+              </div>
+              
+
+
      </template>
 
      <script>
