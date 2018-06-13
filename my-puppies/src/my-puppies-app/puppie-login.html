@@ -1,0 +1,66 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-layout.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<dom-module id="puppie-login">
+    <template>
+        <style>
+            :host {
+                display: block;
+                font-family: Roboto, Noto, sans-serif;
+                /*background-image: url(http://www.placepuppy.net/400/250)*/
+            }
+            app-toolbar{
+                background-color: palevioletred;
+                color: white;
+                margin:20px 0;
+                height: 150px;
+            }
+            .card {
+                margin: 200px;
+                padding: 16px;
+                color: #757575;
+                border-radius: 5px;
+                background-color: #fff;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+         
+       
+        <app-header>
+            <app-toolbar>
+                <div main-title>Meu Sistema</div>
+                <a href="">Ajuda </a>
+                <iron-icon icon="help-outline"></iron-icon>                  
+            </app-toolbar>            
+        </app-header>  
+
+        <div class="card">
+           
+                <paper-input always-float-label label="Usuario">
+                    <iron-icon icon="social:person" slot="prefix"></iron-icon>                        
+                </paper-input>    
+                <paper-input always-float-label label="Senha">
+                    <iron-icon icon="social:person"></iron-icon>                        
+                </paper-input>          
+            
+
+            <paper-button>Login</paper-button>
+        </div>
+        
+        
+
+        
+    </template>
+    <script>
+        class PuppieLogin extends Polymer.Element{
+            static get is() {return 'puppie-login';}
+        }
+
+        customElements.define(PuppieLogin.is,PuppieLogin);
+
+    </script>    
+</dom-module>

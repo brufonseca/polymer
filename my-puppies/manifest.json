@@ -1,0 +1,6 @@
+{
+  "name": "my-puppies",
+  "short_name": "my-puppies",
+  "start_url": "/",
+  "display": "standalone"
+}
