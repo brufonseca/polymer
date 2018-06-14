@@ -4,52 +4,128 @@
 <link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+
 
 <dom-module id="puppie-login">
     <template>
-        <style>
+        <style >
             :host {
                 display: block;
                 font-family: Roboto, Noto, sans-serif;
+               
                 /*background-image: url(http://www.placepuppy.net/400/250)*/
             }
-            app-toolbar{
-                background-color: palevioletred;
-                color: white;
-                margin:20px 0;
-                height: 150px;
+            .container{              
+              background-color: lightblue;
+              margin:0;  
+              padding:0;               
+              position:fixed;              
+              height: 100%;
+              width: 100%; 
+                      
             }
-            .card {
-                margin: 200px;
-                padding: 16px;
+            app-toolbar{
+                background-color: lightseagreen;
+                color: white;                
+                height: 150px;
+               
+               
+            }
+            .cabecalho{
+                background-color: lightseagreen;
+                color: white;                
+                height: 30%;  
+                margin:0;
+                padding:0;  
+                top:0                         
+            }
+            .corpo{
+                margin: 0;
+                position:fixed;
+                background-color: lightgray;
+                height: 100%;
+                width: 100%;
+                padding:0;
+               /* background-image: url(http://www.placepuppy.net/400/250);  */    
+                
+            }   
+            .card {  
+                top:10%;
+                left:35%;
+                width: 300px;
+                height: 220px;
+               
+               /* top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;*/
+
+                 margin: auto; 
+                position:absolute; 
+                           
+                padding: 16px;                           
                 color: #757575;
                 border-radius: 5px;
-                background-color: #fff;
-                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                background-color:violet; /* #fff;*/
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);                
+            } 
+            paper-button.login{
+                background-color: lightslategrey;
+                margin-left: 15%;
+                width: 70%; 
+                font-weight: bold;
+                color:white;               
             }
-        </style>
-         
-       
-        <app-header>
-            <app-toolbar>
-                <div main-title>Meu Sistema</div>
-                <a href="">Ajuda </a>
-                <iron-icon icon="help-outline"></iron-icon>                  
-            </app-toolbar>            
-        </app-header>  
 
-        <div class="card">
-           
-                <paper-input always-float-label label="Usuario">
-                    <iron-icon icon="social:person" slot="prefix"></iron-icon>                        
-                </paper-input>    
-                <paper-input always-float-label label="Senha">
-                    <iron-icon icon="social:person"></iron-icon>                        
-                </paper-input>          
+            paper-button.cadastro{
+                background-color: lightslategrey;
+                margin-left: 30%;
+                width:40%; 
+                height: 15%;  
+                top:10px;  
+                padding:1px;          
+                color:white;               
+            }
+                      
             
+        </style>         
+                <div class="container">
+                       <div class="cabecalho">
+                            <app-header>
+                                <app-toolbar>
+                                    <div main-title>Meu Sistema</div>
+                                    <a href="">Ajuda </a>
+                                    <iron-icon icon="help-outline"></iron-icon>                                                
+                                </app-toolbar>
+                            </app-header>                
+                        </div>
+                        <div class="corpo">
+                            <div class="card">   
+                                <paper-input always-float-label label="Usuario">
+                                    <iron-icon icon="social:person" slot="prefix"></iron-icon>
+                                    <iron-icon icon="info-outline" slot="suffix"></iron-icon>  
+                                 <!--   <paper-icon-button id="id_1" icon="info-outline" slot="suffix"></paper-icon-button>
+                                    <paper-tooltip for="id_1" position="top">&lt;3 &lt;3 &lt;3 </paper-tooltip>  -->                                    
+                                </paper-input> 
+                                <paper-input always-float-label label="Senha">
+                                    <iron-icon icon="lock" slot="prefix"></iron-icon>  
+                                    <iron-icon icon="help-outline" slot="suffix"></iron-icon>                       
+                                </paper-input>         
+                                    
 
-            <paper-button>Login</paper-button>
-        </div>
+                                <paper-button raised class="login">Login</paper-button> 
+                                <paper-button raised class="cadastro">Cadastrar</paper-button>
+                            </div> 
+                        </div>
+                            
+                   </div>
+           
+           
+            
+       
+       
         
         
 
@@ -58,7 +134,13 @@
     <script>
         class PuppieLogin extends Polymer.Element{
             static get is() {return 'puppie-login';}
+
+        _showUser(event){
+           let selecionado=event.target;         
+       }
+
         }
+       
 
         customElements.define(PuppieLogin.is,PuppieLogin);
 

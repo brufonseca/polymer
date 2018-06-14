@@ -7,7 +7,11 @@
     "iron-icon": "^2.1.0",
     "iron-icons": "^2.1.1",
     "paper-button": "^2.1.1",
-    "paper-input": "^2.2.2"
+    "paper-input": "^2.2.2",
+    "paper-tooltip": "^2.1.1",
+    "paper-icon-button": "^2.2.0",
+    "iron-selector": "^2.1.0",
+    "iron-pages": "^2.1.1"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",
